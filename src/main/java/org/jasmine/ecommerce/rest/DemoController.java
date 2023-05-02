@@ -33,11 +33,5 @@ public class DemoController {
         return "Comparing beans: myCoach == antoehrCoach," + (myCoach);
     }
 
-    @GetMapping("/time")
-    public String time(Model model) {
-        //singelton -> true, prototype ->false
-        model.addAttribute("date", new java.util.Date());
-        return "datetime";
 
-    }
 }
