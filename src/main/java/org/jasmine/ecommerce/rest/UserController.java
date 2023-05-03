@@ -17,6 +17,7 @@ import java.util.List;
 public class UserController {
 
     private List<User> user;
+
     private UserService service;
 
     public UserController(UserService userService) {
@@ -30,6 +31,11 @@ public class UserController {
         user = service.findAll();
         model.addAttribute("user", user);
         return "userlist";
+    }
+
+    @GetMapping("/manageorder")
+    public String manageorder() {
+        return "manageorder";
     }
 
     @GetMapping("/userprofile")
@@ -58,7 +64,6 @@ public class UserController {
         //get the sales from service
         User user = service.findbyId(id);
         model.addAttribute("user", user);
-
         return "register";
     }
 }

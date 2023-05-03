@@ -26,6 +26,8 @@ public class Sales {
 
     @Column(name = "recepient_remark")
     private String recepient_remark;
+    @Column(name = "total_price")
+    private String total_price;
 
     @Column(name = "is_showed")
     private boolean is_showed;
