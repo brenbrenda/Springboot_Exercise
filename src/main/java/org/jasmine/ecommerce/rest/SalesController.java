@@ -57,5 +57,14 @@ public class SalesController {
         service.deletebyId(id);
         return "redirect:/sales/list";
     }
+
+    @GetMapping("/manage")
+    public String manageorder(Model model) {
+        sales = service.findAll();
+        model.addAttribute("sales", sales);
+        return "manageorder";
+
+    }
+
 }
 

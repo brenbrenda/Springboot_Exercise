@@ -33,10 +33,6 @@ public class UserController {
         return "userlist";
     }
 
-    @GetMapping("/manageorder")
-    public String manageorder() {
-        return "manageorder";
-    }
 
     @GetMapping("/userprofile")
     public String userProfile(@ModelAttribute("user") User user) {
