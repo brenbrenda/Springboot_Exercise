@@ -46,6 +46,16 @@ public class UserController {
         return "redirect:/user/list";
     }
 
+
+/*
+@GetMapping("/newOrder")
+    public String newOrder(Model model) {
+        //create model
+        Sales sale = new Sales();
+        model.addAttribute("sales", sale);
+        return "newOrder";
+    }
+ */
     @GetMapping("/register")
     public String register(Model model) {
         //create model

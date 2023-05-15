@@ -31,9 +31,17 @@ public class SalesController {
     @PostMapping("/save")
     public String saveSales(@ModelAttribute("sales") Sales sale) {
         service.save(sale);
-        return "redirect:/sales/list";
+//        return "redirect:/sales/list";
+        return "redirect:/sales/manage";
     }
 
+    @GetMapping("/ma")
+    public String cart(Model model) {
+        sales = service.findAll();
+        model.addAttribute("sales", sales);
+        return "cart";
+
+    }
     @GetMapping("/newOrder")
     public String newOrder(Model model) {
         //create model
@@ -66,5 +74,12 @@ public class SalesController {
 
     }
 
+    @GetMapping("/manageorder")
+    public String manage(Model model) {
+        sales = service.findAll();
+        model.addAttribute("sales", sales);
+        return "cart";
+
+    }
 }
 

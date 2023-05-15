@@ -30,7 +30,7 @@ public class DemoController {
     @GetMapping("/check")
     public String check() {
         //singelton -> true, prototype ->false
-        return "Comparing beans: myCoach == antoehrCoach," + (myCoach);
+        return "Comparing beans: myCoach == anotherCoach," + (myCoach);
     }
 
 
