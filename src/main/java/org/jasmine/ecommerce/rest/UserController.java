@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
     private List<User> user;
@@ -29,22 +29,37 @@ public class UserController {
     public String listUsers(Model model) {
 
         user = service.findAll();
-        model.addAttribute("user", user);
+        model.addAttribute("users", user);
         return "userlist";
     }
 
 
     @GetMapping("/userprofile")
-    public String userProfile(@ModelAttribute("user") User user) {
+    public String userProfile(@ModelAttribute("users") User user) {
 
         return "userprofile";
     }
 
     @PostMapping("/save")
-    public String saveUserProfile(@ModelAttribute("user") User user) {
+    public String saveUserProfile(@ModelAttribute("users") User user) {
         service.save(user);
-        return "redirect:/user/list";
+        return "redirect:/users/list";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @PostMapping("/loginAction")
+    public String loginAction() {
+
+        return "product";
+
+    }
+
+
+
 
 
 /*
@@ -52,8 +67,15 @@ public class UserController {
     public String newOrder(Model model) {
         //create model
         Sales sale = new Sales();
-        model.addAttribute("sales", sale);
+        model.addAttribute("salesm", sale);
         return "newOrder";
+    }
+
+     @PostMapping("/save")
+    public String saveSales(@ModelAttribute("sales") Sales sale) {
+        service.save(sale);
+//        return "redirect:/sales/list";
+        return "redirect:/sales/order";
     }
  */
     @GetMapping("/register")
@@ -64,8 +86,8 @@ public class UserController {
         return "register";
     }
 
-    @GetMapping("/updateOrder")
-    public String updateOrder(@RequestParam("user_id") int id, Model model) {
+    @GetMapping("/updateUser")
+    public String updateUser(@RequestParam("id") int id, Model model) {
 
         //get the sales from service
         User user = service.findbyId(id);

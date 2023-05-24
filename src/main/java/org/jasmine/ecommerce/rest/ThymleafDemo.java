@@ -20,6 +20,11 @@ public class ThymleafDemo {
         service = salesService;
     }
 
+    @GetMapping("/")
+    public String main() {
+        return "index";
+    }
+
     //
     @GetMapping("/time")
     public String time(Model model) {
@@ -29,11 +34,27 @@ public class ThymleafDemo {
 
     }
 
-    @GetMapping("/manage")
-    public String cart(Model model) {
+//    @GetMapping("/manage")
+//    public String cart(Model model) {
+//        sales = service.findAll();
+//        model.addAttribute("sales", sales);
+//        return "cart";
+//
+//    }
+
+    @GetMapping("/product")
+    public String product(Model model) {
         sales = service.findAll();
         model.addAttribute("sales", sales);
-       return "cart";
+        return "product";
+
+    }
+
+    @GetMapping("/men")
+    public String item() {
+//        sales = service.findAll();
+//        model.addAttribute("sales", sales);
+        return "men";
 
     }
 }

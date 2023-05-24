@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name="user")
+@Table(name="users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="userid")
-    private int userid;
+    @Column(name="id")
+    private int id;
 
     @Column(name="username", unique = true)
     private String username;
@@ -27,8 +27,8 @@ public class User {
     @Column(name = "avatar")
     private String avatar;
 
-    public User(int userid, String username, String password, String phone, String email, String avatar) {
-        this.userid = userid;
+    public User(int id, String username, String password, String phone, String email, String avatar) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.phone = phone;
@@ -41,11 +41,11 @@ public class User {
     }
 
     public int getUserid() {
-        return userid;
+        return id;
     }
 
-    public void setUserid(int userid) {
-        this.userid = userid;
+    public void setUserid(int id) {
+        this.id = id;
     }
 
     public String getUsername() {

@@ -36,12 +36,23 @@ public class MerchantController {
         return "redirect:/sales/manage";
     }
 
-    @GetMapping("/newOrder")
-    public String newOrder(Model model) {
+
+    @GetMapping("/login")
+    public String login() {
+        return "merchantLogin";
+    }
+
+    @PostMapping("/loginAction")
+    public String loginAction() {
+        return "cart";
+    }
+
+    @GetMapping("/register")
+    public String register(Model model) {
         //create model
-        Merchants merchant = new Merchants();
+        Merchants merchants = new Merchants();
         model.addAttribute("merchants", merchants);
-        return "newOrder";
+        return "merchantRegister";
     }
 
     @GetMapping("/updateOrder")

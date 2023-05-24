@@ -10,7 +10,7 @@ public interface MerchantService {
 
     void deletebyId(int id);
 
-    Merchants save(Merchants sales);
+    Merchants save(Merchants merchants);
 
     List<Merchants> findAll();
 }

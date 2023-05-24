@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 public class Merchants {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private int id;
 
     @Column(name = "username", nullable = false, unique = true)

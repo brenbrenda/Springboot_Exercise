@@ -32,16 +32,10 @@ public class SalesController {
     public String saveSales(@ModelAttribute("sales") Sales sale) {
         service.save(sale);
 //        return "redirect:/sales/list";
-        return "redirect:/sales/manage";
+        return "redirect:/sales/order";
     }
 
-    @GetMapping("/ma")
-    public String cart(Model model) {
-        sales = service.findAll();
-        model.addAttribute("sales", sales);
-        return "cart";
 
-    }
     @GetMapping("/newOrder")
     public String newOrder(Model model) {
         //create model
@@ -63,22 +57,23 @@ public class SalesController {
     public String deleteOrder(@RequestParam("sale_id") int id, Model model) {
 
         service.deletebyId(id);
-        return "redirect:/sales/list";
+        return "redirect:/manage";
     }
 
-    @GetMapping("/manage")
-    public String manageorder(Model model) {
-        sales = service.findAll();
-        model.addAttribute("sales", sales);
-        return "manageorder";
 
-    }
-
-    @GetMapping("/manageorder")
-    public String manage(Model model) {
+    @GetMapping("/order")
+    public String cart(Model model) {
         sales = service.findAll();
         model.addAttribute("sales", sales);
         return "cart";
+
+    }
+    @GetMapping("/product")
+    //TO DO: oyt it in the other product servlet
+    public String product(Model model) {
+        sales = service.findAll();
+        model.addAttribute("sales", sales);
+        return "product";
 
     }
 }
