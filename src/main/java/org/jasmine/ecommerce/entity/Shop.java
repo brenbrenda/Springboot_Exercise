@@ -8,7 +8,8 @@ import java.util.List;
 public class Shop {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "shop_id")
+    private int shop_id;
 
     @Column(name = "shop_name")
     private String shop_name;

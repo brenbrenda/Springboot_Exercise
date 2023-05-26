@@ -16,13 +16,13 @@ public class Product {
         this.id = id;
     }
 
-    public int getShop_id() {
-        return shop_id;
-    }
+//    public Merchants getMerchants() {
+//        return merchant_id;
+//    }
 
-    public void setShop_id(int shop_id) {
-        this.shop_id = shop_id;
-    }
+//    public void setMerchant_id(Merchants merchant_id) {
+//        this.merchant_id = merchant_id;
+//    }
 
     public String getProduct_name() {
         return product_name;
@@ -56,13 +56,13 @@ public class Product {
         this.size = size;
     }
 
-//    public String getCategory() {
-//        return category;
-//    }
-//
-//    public void setCategory(String category) {
-//        this.category = category;
-//    }
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public String getColor() {
         return color;
@@ -102,8 +102,9 @@ public class Product {
     private int id;
 
 
-    @Column(name="shop_id")
-    private int shop_id;
+//    @ManyToOne
+//    @JoinColumn(name = "merchant_id", nullable = false)
+//    private Merchants merchant_id;
 
     @Column(name="product_name")
     private String product_name;
@@ -117,8 +118,8 @@ public class Product {
     @Column(name = "size")
     private String size;
 
-//    @Column(name = "category")
-//    private String category;
+    @Column(name = "category")
+    private String category;
 
     @Column(name = "color")
     private String color;
