@@ -16,36 +16,35 @@
 
 <div class="container">
 
-    <a th:href="@{/sales/newOrder}" class="btn btn-primary btn-sm mb1"> New Order</a>
-    <h3>Sales Directory</h3>
+    <a th:href="@{/users/register}" class="btn btn-primary btn-sm mb1">Sign up</a>
+    <h3>user</h3>
     <hr>
 
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
         <tr>
-            <th>datetime</th>
-            <th>receiver address</th>
-            <th>receiver phone</th>
-            <th>receiver remark</th>
-            <th>action</th>
+            <th>username</th>
+            <th>phone</th>
+            <th>email</th>
+            <th>photo</th>
         </tr>
         </thead>
 
         <tbody>
-        <tr th:each="sale : ${sales}">
+        <tr th:each="user : ${users}">
 
-            <td th:text="${sale.sales_date_time}" />
-            <td th:text="${sale.recepient_addeess}" />
-            <td th:text="${sale.recepient_phone}" />
-            <td th:text="${sale.recepient_remark}" />
+            <td th:text="${user.username}" />
+            <td th:text="${user.phone}" />
+            <td th:text="${user.email}" />
+            <td th:text="${user.avatar}" />
 
             <td>
-                <a th:href="@{/sales/updateOrder(sales_id=${sale.sales_id})}"
+                <a th:href="@{/users/updateUser(id=${user.userid})}"
                    class="btn btn-info btn-sm">
                     Update
                 </a>
 
-                <a th:href="@{/sales/deleteOrder(sale_id=${sale.sales_id})}"
+                <a th:href="@{/users/deleteAccount(id=${user.userid})}"
                    class="btn btn-danger btn-sl" onclick="if (!(confirm('are you sure to delete the order?'))) return false">
                     Delete
                 </a>

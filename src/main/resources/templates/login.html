@@ -61,30 +61,24 @@
         <hr>
 
 
-        <form action="#" th:action="@{/user/save}"
-              th:object="${user}" method="POST">
+        <form action="#" th:action="@{/users/loginAction}"
+              th:object="${users}" method="POST">
 
             <!-- Add hidden form field to handle update -->
             <!--        <input type="hidden" th:field="*{userid}" />-->
 
-            <input type="text" th:field="*{username}"
-                   class="form-control mb-4 w-25" placeholder="user name">
+            <input type="text" class="form-control mb-4 w-25" placeholder="user name">
 
-            <input type="text" th:field="*{phone}"
-                   class="form-control mb-4 w-25" placeholder="phone">
+            <input type="password" class="form-control mb-4 w-25" placeholder="phone">
 
-            <input type="text" th:field="*{email}"
-                   class="form-control mb-4 w-25" placeholder="email">
 
-<!--            <input type="file" th:field="*{avatar}"-->
-<!--                   class="form-control mb-4 w-25" placeholder="avatar">-->
 
             <button type="submit" class="btn btn-third">Login</button>
-            <button type="submit" class="btn btn-third">Google</button>
+<!--            <button type="submit" class="btn btn-third">Google</button>-->
         </form>
 
         <hr>
-        <a th:href="@{/user/list}" class="btn btn-light">Back</a>
+        <a th:href="@{/users/register}" class="btn btn-light">Register</a>
 
     </div>
 

@@ -3,7 +3,7 @@ package org.jasmine.ecommerce.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="address")
+@Table(name="addresses")
 public class Address {
 
     @Id

@@ -41,7 +41,7 @@ public class SalesController {
         //create model
         Sales sale = new Sales();
         model.addAttribute("sales", sale);
-        return "newOrder";
+        return "newSale";
     }
 
     @GetMapping("/updateOrder")
